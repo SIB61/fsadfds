@@ -3,7 +3,7 @@ import foto2 from "~/images/foto10.jpg";
 import foto3 from "~/images/foto11.jpg";
 import foto4 from "~/images/foto12.jpg";
 import foto5 from "~/images/foto13.jpg";
-import foto6 from "~/images/foto14.jpg";
+import foto6 from "~/images/foto18.jpg";
 import foto8 from "~/images/foto16.jpg";
 import Gallery from "./Gallery";
 import type { IPhoto } from "./Gallery";
