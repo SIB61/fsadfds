@@ -38,7 +38,7 @@ const BrideAndGroom = () => {
                 className="w-48 h-48 rounded-full mb-8"
               />
               <h3 className="text-5xl font-medium font-head mb-4 text-gray-800">
-                Md. Sabit Islam Bhuiya
+                Eng. Md. Sabit Islam Bhuiya
               </h3>
             </div>
             <div className="flex flex-col items-center">
