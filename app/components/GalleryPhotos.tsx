@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import foto5 from "~/images/foto12.jpg";
 import foto3 from "~/images/foto14.jpg";
 import foto6 from "~/images/foto18.jpg";
+import foto7 from "~/images/foto15.jpg"
 import Gallery from "./Gallery";
 import type { IPhoto } from "./Gallery";
 
 const photos: IPhoto[] = [
   {
-    src: foto5,
+    src: foto3,
     width: 6,
     height: 5,
     alt: "pic 2",
@@ -19,7 +19,7 @@ const photos: IPhoto[] = [
     alt: "pic 4",
   },
   {
-    src: foto3,
+    src: foto7,
     width: 3,
     height: 2,
     alt: "pic 5",
