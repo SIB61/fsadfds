@@ -4,7 +4,7 @@ const MAP_EMBEDED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.2320684403257!2d90.38883367568214!3d23.881388178581243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c534a719514f%3A0xfdf39b3660e9933b!2sSea%20Shell%20Hotel%20-%20Sales%20%26%20Booking%20Office!5e0!3m2!1sbn!2sbd!4v1774303164238!5m2!1sbn!2sbd";
 const MAP_REDIRECT_URL =
   "https://www.google.com/maps/dir//Sea+Shell+Hotel+-+Sales+%26+Booking+Office,+House+%23+09+Road+No.+13,+%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE+1230/@23.8813882,90.3888337,17z/data=!4m19!1m10!3m9!1s0x3755c534a719514f:0xfdf39b3660e9933b!2sSea+Shell+Hotel+-+Sales+%26+Booking+Office!5m2!4m1!1i2!8m2!3d23.8813882!4d90.3914086!16s%2Fg%2F11zkcfkm7v!4m7!1m0!1m5!1m1!1s0x3755c534a719514f:0xfdf39b3660e9933b!2m2!1d90.3914086!2d23.8813882?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D";
-const MAP_TITLE = "Sea Shell Hotel - Sales & Booking Office";
+const MAP_TITLE = "Sea Shell Hotel & Party Palace";
 const MAP_ADDRESS =
   "House # 09 Road No. 13, Sector 10, Uttara";
 
