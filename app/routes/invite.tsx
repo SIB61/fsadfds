@@ -4,6 +4,15 @@ import { encodeName } from "~/components/WelcomeModal";
 export default function Invite() {
     const [name, setName] = useState("");
     const [url, setUrl] = useState("");
+    const [toast, setToast] = useState<{ show: boolean; message: string }>({
+        show: false,
+        message: "",
+    });
+
+    const triggerToast = (message: string) => {
+        setToast({ show: true, message });
+        setTimeout(() => setToast({ show: false, message: "" }), 3000);
+    };
 
     const handleGenerate = (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,7 +29,7 @@ export default function Invite() {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(url);
-        alert("URL copied to clipboard!");
+        triggerToast("Link copied to clipboard!");
     };
 
     return (
@@ -94,7 +103,7 @@ export default function Invite() {
                                     onClick={() => {
                                         const text = `Hi ${name}, we're getting married! We'd love for you to join us. View our invitation here: ${url}`;
                                         navigator.clipboard.writeText(text);
-                                        alert("Invitation message copied!");
+                                        triggerToast("Invitation message copied!");
                                     }}
                                     className="absolute bottom-4 right-4 p-3 bg-white border-2 border-gray-100 rounded-xl hover:border-[#CE7BB0] hover:text-[#CE7BB0] transition-all shadow-sm"
                                     title="Copy full message"
@@ -124,6 +133,13 @@ export default function Invite() {
                                 Share on WhatsApp
                             </button>
                         </div>
+                    </div>
+                )}
+
+                {toast.show && (
+                    <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-[#CE7BB0]/90 backdrop-blur-md text-white px-8 py-4 rounded-2xl shadow-[0_20px_50px_rgba(206,123,176,0.3)] animate-in fade-in slide-in-from-bottom-10 duration-500 z-50 flex items-center gap-3 border border-white/20">
+                        <i className="bx bx-check-circle text-2xl animate-bounce" />
+                        <span className="font-sans font-bold tracking-wide italic">{toast.message}</span>
                     </div>
                 )}
             </div>
