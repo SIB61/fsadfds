@@ -80,7 +80,31 @@ export default function Invite() {
                             </button>
                         </div>
 
-                        <div className="flex flex-col gap-3">
+                        <div className="mt-8 pt-8 border-t border-dashed border-gray-200">
+                            <h3 className="text-lg font-bold text-gray-700 font-head mb-4">
+                                Full Invitation Message
+                            </h3>
+                            <div className="relative group">
+                                <textarea
+                                    readOnly
+                                    value={`Hi ${name}, we're getting married! We'd love for you to join us. View our invitation here: ${url}`}
+                                    className="w-full h-32 px-4 py-3 rounded-xl border-2 border-gray-100 focus:border-[#CE7BB0] bg-[#F9F9F9] font-sans text-sm text-gray-600 resize-none outline-none"
+                                />
+                                <button
+                                    onClick={() => {
+                                        const text = `Hi ${name}, we're getting married! We'd love for you to join us. View our invitation here: ${url}`;
+                                        navigator.clipboard.writeText(text);
+                                        alert("Invitation message copied!");
+                                    }}
+                                    className="absolute bottom-4 right-4 p-3 bg-white border-2 border-gray-100 rounded-xl hover:border-[#CE7BB0] hover:text-[#CE7BB0] transition-all shadow-sm"
+                                    title="Copy full message"
+                                >
+                                    <i className="bx bx-copy text-lg" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-3 mt-8">
                             <a
                                 href={url}
                                 target="_blank"
@@ -98,16 +122,6 @@ export default function Invite() {
                             >
                                 <i className="bx bxl-whatsapp text-xl" />
                                 Share on WhatsApp
-                            </button>
-                            <button
-                                onClick={() => {
-                                    const text = `Hi ${name}, we're getting married! We'd love for you to join us. View our invitation here: ${url}`;
-                                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank');
-                                }}
-                                className="w-full py-3 text-center text-[#0084FF] font-bold border-2 border-[#0084FF] rounded-xl hover:bg-[#0084FF] hover:text-white transition-all font-sans flex items-center justify-center gap-2"
-                            >
-                                <i className="bx bxl-messenger text-xl" />
-                                Share on Messenger
                             </button>
                         </div>
                     </div>
