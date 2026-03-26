@@ -99,6 +99,16 @@ export default function Invite() {
                                 <i className="bx bxl-whatsapp text-xl" />
                                 Share on WhatsApp
                             </button>
+                            <button
+                                onClick={() => {
+                                    const text = `Hi ${name}, we're getting married! We'd love for you to join us. View our invitation here: ${url}`;
+                                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank');
+                                }}
+                                className="w-full py-3 text-center text-[#0084FF] font-bold border-2 border-[#0084FF] rounded-xl hover:bg-[#0084FF] hover:text-white transition-all font-sans flex items-center justify-center gap-2"
+                            >
+                                <i className="bx bxl-messenger text-xl" />
+                                Share on Messenger
+                            </button>
                         </div>
                     </div>
                 )}
