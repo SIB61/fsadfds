@@ -1,11 +1,32 @@
-const CALENDAR_URL = `https://www.google.com/calendar/render?
-action=TEMPLATE&
-text=Wedding+of+Sabit+%26+Choia+%F0%9F%92%8C&
-location=Wedding+Venue&
-details=With+humility+and+joy%2C+we+announce+the+wedding+of+Md.+Sabit+Islam+Bhuiya+and+Dr.+Sagufta+Tasnim+Choia.%0A%0AInvitation+Link%3A%0Ahttps%3A%2F%2Fwww.sabitandchoia.com%2F%0A%0AIt+would+be+our+pleasure+to+have+you+with+us+on+our+wedding+reception.%0A%0AThank+you+for+your+attention.%0A%0AWith+Love%2C%0ASabit+%26+Choia&
-dates=20260414T130000Z%2F20260414T160000Z`;
+import { useEffect, useState } from "react";
 
 const Agendas = () => {
+  const [calendarUrl, setCalendarUrl] = useState("");
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    const details = `With humility and joy, we announce the wedding of Md. Sabit Islam Bhuiya and Dr. Sagufta Tasnim Choia.
+
+Invitation Link:
+${currentUrl}
+
+It would be our pleasure to have you with us on our wedding reception.
+
+Thank you for your attention.
+
+With Love,
+Sabit & Choia`;
+
+    const params = new URLSearchParams({
+      action: "TEMPLATE",
+      text: "Wedding of Sabit & Choia 💌",
+      location: "Sea Shell Hotel & Party Palace, House # 09 Road No. 13, Sector 10, Uttara",
+      details: details,
+      dates: "20260414T130000Z/20260414T160000Z",
+    });
+
+    setCalendarUrl(`https://www.google.com/calendar/render?${params.toString()}`);
+  }, []);
   return (
     <div className="max-w-3xl mx-auto text-center">
       <div className="mb-4 text-gray-500 font-head md:text-lg font-medium">
@@ -19,7 +40,7 @@ const Agendas = () => {
       </h5>
       <div className="px-12 flex max-w-md mx-auto mb-10">
         <a
-          href={CALENDAR_URL}
+          href={calendarUrl}
           target={"_blank"}
           className="px-8 py-4 transition-all text-lg font-semibold w-full rounded-lg bg-contrast hover:bg-contrast-2 outline-contrast-3 text-white outline-4 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
           rel="noreferrer"
